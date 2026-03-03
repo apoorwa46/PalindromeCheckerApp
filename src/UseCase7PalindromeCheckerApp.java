@@ -1,28 +1,25 @@
 import java.util.*;
 
-public class UseCase6PalindromeCheckerApp {
+public class UseCase7PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String text = "refer";
+        String text = "tenet";
 
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
 
         for (int i = 0; i < text.length(); i++) {
-            char ch = text.charAt(i);
-            queue.add(ch);
-            stack.push(ch);
+            deque.addLast(text.charAt(i));
         }
 
         boolean isPalindrome = true;
 
-        for (int i = 0; i < text.length(); i++) {
+        while (deque.size() > 1) {
 
-            char fromQueue = queue.remove();
-            char fromStack = stack.pop();
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
 
-            if (fromQueue != fromStack) {
+            if (front != rear) {
                 isPalindrome = false;
                 break;
             }
