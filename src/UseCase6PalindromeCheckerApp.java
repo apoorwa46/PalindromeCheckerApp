@@ -1,23 +1,28 @@
-import java.util.Stack;
+import java.util.*;
 
-public class UseCase5PalindromeCheckerApp {
+public class UseCase6PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String text = "kayak";
+        String text = "refer";
 
+        Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < text.length(); i++) {
-            stack.push(text.charAt(i));
+            char ch = text.charAt(i);
+            queue.add(ch);
+            stack.push(ch);
         }
 
         boolean isPalindrome = true;
 
         for (int i = 0; i < text.length(); i++) {
-            char ch = stack.pop();
 
-            if (text.charAt(i) != ch) {
+            char fromQueue = queue.remove();
+            char fromStack = stack.pop();
+
+            if (fromQueue != fromStack) {
                 isPalindrome = false;
                 break;
             }
