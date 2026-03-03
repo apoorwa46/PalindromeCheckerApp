@@ -5,12 +5,11 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("======================================");
+        System.out.println("=");
         System.out.println("       " + APP_NAME);
         System.out.println("       " + VERSION);
-        System.out.println("======================================");
+        System.out.println("===");
 
-        System.out.println("Welcome to the Palindrome Checker Application!");
-        System.out.println("Program started successfully.");
+        System.out.println("Welcome to Palindrome Checker App!");
     }
 }
